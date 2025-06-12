@@ -81,6 +81,8 @@
   padding: 0.6rem 1rem;
   margin-bottom: 1rem;
   align-self: center;
+  border: .05px outset var(--light);
+  background-color: var(--darkish);
 }
 
 .filterWarning {
