@@ -4,20 +4,32 @@ function CartProduct({data, cartSetter}){
   const {cart, setCart} = cartSetter;
 
   function incrementQtd(){
-    const target = cart.find(item => item.id === data.id);
-    const copyObj = target;
-    copyObj.qtd++;
+    if(data.qtd < 99){
+      const replacer = data;
+      replacer.qtd = replacer.qtd + 1;
 
-    setCart([...cart.filter(item => item.id !== data.id), copyObj])
+      const idx = cart.findIndex(item => item.id === data.id);
+      let replacerCart = cart;
+      console.log(replacerCart);
+      replacerCart.splice(idx, 1, replacer);
+      console.log(replacerCart);
+
+      setCart([...replacerCart]);
+    }
   }
 
   function decrementQtd(){
     if(data.qtd > 1){
-      const target = cart.find(item => item.id === data.id);
-      const copyObj = target;
-      copyObj.qtd--;
+      const replacer = data;
+      replacer.qtd = replacer.qtd - 1;
 
-      setCart([...cart.filter(item => item.id !== data.id), copyObj])
+      const idx = cart.findIndex(item => item.id === data.id);
+      let replacerCart = cart;
+      console.log(replacerCart);
+      replacerCart.splice(idx, 1, replacer);
+      console.log(replacerCart);
+
+      setCart([...replacerCart]);
     }
   }
 
@@ -40,7 +52,7 @@ function CartProduct({data, cartSetter}){
             </div>
           </div>
           <div className={styles.right}>
-            <p>Subtotal: {(data.price * data.qtd).toFixed(2)}</p>
+            <p>Subtotal: ${(data.price * data.qtd).toFixed(2)}</p>
             <button className={styles.btn} onClick={() => removeFromCart()}>remove</button>
           </div>
         </div>

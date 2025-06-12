@@ -75,11 +75,12 @@ function ShopPage({data, cartSetter}){
           <div className={styles.categories + (filter ? ' ' + styles.shown : '')}>
             {categories.items.map(item => 
               <span className={styles.categoryItem} key={item}>
-                <label htmlFor={'input-'+item}> {item} </label>
+                <label className={styles.label} htmlFor={'input-'+item}> {item} </label>
                 <input id={'input-'+item} type="checkbox" checked={categories.selected.includes(item)} value={item} onChange={handleCategorySelect} />
               </span>
             )}
           </div>
+
         </div>
       </div>
 

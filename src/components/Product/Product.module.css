@@ -33,7 +33,7 @@
 }
 
 .label {
-  font-size: .75rem;
+  font-size: calc(.5rem + .9vw);
 }
 
 @keyframes priceBounce {
@@ -88,3 +88,9 @@
 .addToCart {
   padding: 0.5rem 1rem
 }
+
+/* @media (width > 740px) {
+  .label {
+    font-size: 
+  }
+} */

@@ -1,5 +1,11 @@
 .container {
   padding: 1rem;
+  opacity: 1;
+  transition: opacity .5s ease-out;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 .hero {
@@ -15,7 +21,7 @@
 
 
   & h2 {
-    font-size: 2rem;
+    font-size: calc(1rem + 4vw);
     text-indent: 1rem;
     margin: 0;
     margin-bottom: 1rem;
@@ -23,6 +29,7 @@
 
   & p {
     text-align: center;
+    font-size: calc(.75rem + 1.25vw);
   }
 }
 
@@ -34,7 +41,7 @@
 
 .categories {
   display: none;
-  gap: 1rem;
+  gap: .5rem;
   justify-content: center;
   align-items: baseline;
   margin-bottom: 1rem;
@@ -42,7 +49,7 @@
 
   transform-origin: top;
   transform: scaleY(0);
-  transition: transform .5s, display .25s allow-discrete;
+  transition: transform .5s, display .2s allow-discrete;
 
   & h3 {
     margin-block-start: 0;
@@ -58,12 +65,16 @@
 }
 
 .categoryItem {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid: auto / 1fr 1.2rem;
   width: 100%;
   border: 3px solid var(--darkish);
   border-radius: .5rem;
   padding: 0.25rem;
+
+  & label {
+    text-align: center;
+  }
 }
 
 .filterBtn {

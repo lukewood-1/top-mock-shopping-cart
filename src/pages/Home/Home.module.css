@@ -1,0 +1,27 @@
+.heroSection {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.btnDiv {
+}
+
+.link {
+  padding: .3rem .6rem;
+  margin-right: .5rem;
+  border: 1px outset var(--light)
+}
+
+.right {
+
+}

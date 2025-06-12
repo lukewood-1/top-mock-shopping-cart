@@ -12,11 +12,12 @@ function ShoppingCart({cartSetter}){
       total += (i.price * i.qtd);
     }
 
-    return total.toFixed(2);
+    return '$' + total.toFixed(2);
   }
 
   return (
     <div className={styles.cart}>
+      <h3 className={styles.total}>Total: {total()}</h3>
       <h2 className={styles.headline}>Your cart</h2>
       <div className={styles.productsWrapper}>
         {
@@ -25,7 +26,6 @@ function ShoppingCart({cartSetter}){
           : cart.map(product => <CartProduct key={product.id} data={product} cartSetter={cartSetter} />)
         }
       </div>
-      <h3 className={styles.total}>Total: {total()}</h3>
     </div>
   )
 }
