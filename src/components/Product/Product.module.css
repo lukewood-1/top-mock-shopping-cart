@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.3rem;
+
+  & > div {
+    display: flex;
+    align-items: baseline;
+    padding-inline: 1rem;
+
+    & label {
+      margin-right: 0.5rem;
+    }
+
+    & input {
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+}
+
+.label, .price {
+  margin: 0;
+  padding-inline: 1rem;
+}
+
+.label {
+  font-size: .75rem;
+}
+
+@keyframes priceBounce {
+  0% {
+    transform: scale(1)
+  } 50% {
+    transform: scale(1.05)
+  } 100% {
+    transform: scale(1)
+  }
+}
+.price {
+  font-size: 0.9rem;
+  animation: priceBounce 1s infinite normal forwards;
+  transform-origin: left;
+  will-change: transform;
+}
+
+.image {
+  max-width: 80%;
+  box-shadow: 0 0 .5rem #fff;
+  border-radius: 0.5rem;
+  transition: transform .5s;
+  will-change: transform;
+  align-self: center;
+  margin-bottom: 0.5rem;
+}
+.image:hover {
+  transform: scale(1.05);
+}
+
+.qtdInput {
+  padding: 0.25rem 0.5rem;
+  max-width: 7ch;
+  border-style: outset;
+
+  &:active {
+    border-style: inset;
+  }
+}
+
+.qtdBtns {
+  display: flex;
+  gap: .25rem;
+
+}
+
+.qtdBtn {
+  padding: 0.5rem;
+}
+
+.addToCart {
+  padding: 0.5rem 1rem
+}

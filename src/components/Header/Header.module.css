@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: var(--darkish);
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.headline {
+  margin: 0;
+}
+
+.button {
+  padding: .5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.selectedSection {
+  color: orange;
+}
+
+.dropdownBtn {
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.links {
+  list-style-type: none;
+  margin: 0;
+  gap: 0.25rem;
+
+  display: none;
+  justify-content: space-evenly;
+
+  will-change: transform;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .5s, display .375s allow-discrete;
+
+  & button {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.fadeIn {
+  transform: scaleY(1);
+  display: flex;
+
+  @starting-style {
+    transform: scaleY(0);
+  }
+}

@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid: repeat(auto-fit, minmax(min-content, 300px)) / repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem .25rem;
+}
+
+.productSection {
+  background: var(--darkish);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+
+.emptyGrid {
+  text-align: center;
+}
